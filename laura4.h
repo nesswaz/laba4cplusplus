@@ -4,18 +4,15 @@
 #include <vector>
 #include <string>
 using namespace std;
-void fillKeyboard(std::vector<std::vector<int>> &matrix);
-void fillRandom(std::vector<std::vector<int>> &matrix);
-void fill_file(std::vector<std::vector<int>> &matrix, std::string filename);
-void matrix29Console(std::vector<std::vector<int>> &matrix);
-void matrix29File(std::vector<std::vector<int>> &matrix);
-void matrix59Console(std::vector<std::vector<int>> &matrix);
-void matrix59File(std::vector<std::vector<int>> &matrix);
-void clearMatrix(std::vector<std::vector<int>> &matrix);
+void fillKeyboard(vector<vector<int>> &matrix); //заполнение с клавиатуры
+void fillRandom(vector<vector<int>> &matrix); //заполнение рандом числами
+void fill_file(vector<vector<int>> &matrix, string filename); //заполнение из файла
+void clearMatrix(vector<vector<int>> &matrix); //очищение матрицы 
 
 void matrix27(vector<vector<int>> &matrix);
 void matrix27file(vector<vector<int>> &matrix);
 
 void matrix53(vector<vector<int>> &matrix);
+void matrix53file(vector<vector<int>> &matrix);
 
 #endif

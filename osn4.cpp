@@ -21,7 +21,7 @@ int main() {
         cout << "5. Задание Matrix53" << endl;
         cout << "6. Задание DArray7" << endl;
         cout << "7. Задание DArray17" << endl;
-        cout << "777. Выход" << endl;
+        cout << "777. Выход из программы" << endl;
         cin >> choice;
         switch (choice) {
             case 1: {
@@ -47,14 +47,15 @@ int main() {
             }
             case 5: {
                 matrix53(matrix);
+                matrix53file(matrix);
                 break;
             }
             case 777: {
-                cout << "Работа завершена" << endl;
+                cout << "Выход из программы" << endl;
                 break;
             }
             default:
-                cout << "Неверные данные" << endl;
+                cout << "Введены неверные данные" << endl;
                 break;
         }
     } while (choice != 777);

@@ -54,7 +54,7 @@ void fillRandom(vector<vector<int>> &matrix) {
     srand(time(0));
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            matrix[i][j] = rand() % 201 - 100;
+            matrix[i][j] = rand() % 201 - 100; //-100 до 100
         }
     }
     cout << "Матрица заполнена случайными числами!" << endl;
@@ -67,6 +67,7 @@ void fillRandom(vector<vector<int>> &matrix) {
     cout << endl;
 }
 
+//Функция заполнения матрицы из файла
 void fill_file(vector<vector<int>> &matrix, string filename) {
     int n, m;
     ifstream file(filename);
@@ -96,119 +97,13 @@ void fill_file(vector<vector<int>> &matrix, string filename) {
     cout << endl;
 }
 
-
-// Matrix29 - вывод в консоль
-void matrix29Console(vector<vector<int>> &matrix) {
-    int n = matrix.size();
-    int m = matrix[0].size();
-    for (int i = 0; i < n; i++) {
-        double sum = 0;
-        for (int j = 0; j < m; j++) {
-            sum += double(matrix[i][j]);
-        }
-        double srznach = sum / double(m);
-        cout << "Среднее арифметическое " << i + 1 << " строки = " << srznach << endl;
-        int count = 0;
-        for (int j = 0; j < m; j++) {
-            if (double(matrix[i][j]) < srznach) {
-                count++;
-            }
-        }
-        cout << "Строка " << i + 1 << ": " << count << " элементов меньше среднего" << endl;
-    }
-    cout << endl;
-}
-
-// Matrix29 - запись в файл
-void matrix29File(vector<vector<int>> &matrix) {
-    ofstream file("c.txt");
-    if (file.is_open()) {
-        int n = matrix.size();
-        int m = matrix[0].size();
-        for (int i = 0; i < n; i++) {
-            double sum = 0;
-            for (int j = 0; j < m; j++) {
-                sum += double(matrix[i][j]);
-            }
-            double srznach = sum / double(m);
-            int count = 0;
-            for (int j = 0; j < m; j++) {
-                if (double(matrix[i][j]) < srznach) {
-                    count++;
-                }
-            }
-            file << "Строка " << i + 1 << ": среднее = " << srznach 
-                 << ", элементов меньше среднего = " << count << endl;
-        }
-        file.close();
-        cout << "Результаты Matrix29 записаны в файл c.txt" << endl;
-    }
-    cout << endl;
-}
-
-// Matrix59 - вывод в консоль
-void matrix59Console(vector<vector<int>> &matrix) {
-    int n = matrix.size();
-    int m = matrix[0].size();
-    // Создаем копию матрицы чтобы не изменять оригинал
-    vector<vector<int>> tempMatrix = matrix;
-    
-    // Отражаем строки относительно горизонтали
-    for (int i = 0; i < n / 2; i++) {
-        for (int j = 0; j < m; j++) {
-            int temp = tempMatrix[i][j];
-            tempMatrix[i][j] = tempMatrix[n - 1 - i][j];
-            tempMatrix[n - 1 - i][j] = temp;
-        }
-    }
-    
-    cout << "Преобразованная матрица:" << endl;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            cout << tempMatrix[i][j] << " ";
-        }
-        cout << endl;
-    }
-    cout << endl;
-}
-
-// Matrix59 - запись в файл
-void matrix59File(vector<vector<int>> &matrix) {
-    ofstream file("c.txt");
-    if (file.is_open()) {
-        int n = matrix.size();
-        int m = matrix[0].size();
-        // Создаем копию матрицы чтобы не изменять оригинал
-        vector<vector<int>> tempMatrix = matrix;
-        
-        // Отражаем строки относительно горизонтали
-        for (int i = 0; i < n / 2; i++) {
-            for (int j = 0; j < m; j++) {
-                int temp = tempMatrix[i][j];
-                tempMatrix[i][j] = tempMatrix[n-1-i][j];
-                tempMatrix[n-1-i][j] = temp;
-            }
-        }
-        
-        file << "Преобразованная матрица:" << endl;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                file << tempMatrix[i][j] << " ";
-            }
-            file << endl;
-        }
-        file.close();
-        cout << "Результаты Matrix59 записаны в файл c.txt" << endl;
-    }
-    cout << endl;
-}
-
 // Функция для очистки матрицы
 void clearMatrix(vector<vector<int>> &matrix) {
     matrix.clear();
     cout << "Матрица очищена!" << endl;
 }
 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++(1)
 
 void matrix27(vector<vector<int>> &matrix) { //запись в консоль
     if (matrix.empty() || matrix[0].empty()) {
@@ -269,6 +164,8 @@ void matrix27file(vector<vector<int>> &matrix) { //запись в консол�
     cout << endl;
 }
 
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++(2)
+
 void matrix53(vector<vector<int>> &matrix) {
     if (matrix.empty() || matrix[0].empty()) {
     cout << "Матрица пуста" << endl;
@@ -311,7 +208,7 @@ void matrix53(vector<vector<int>> &matrix) {
     }
     
     // Вывод результата
-    cout << "полученная матрица:" << endl;
+    cout << "Полученная матрица:" << endl;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             cout << matrix[i][j] << " ";
@@ -319,3 +216,58 @@ void matrix53(vector<vector<int>> &matrix) {
         cout << endl;
     }
 }
+
+void matrix53file(vector<vector<int>> &matrix) {
+    ofstream file("c.txt");
+        if (file.is_open()) {
+        int n = matrix.size();
+        int m = matrix[0].size();
+        int firstCol = m;
+        int lastCol = m; 
+        // Создаем копию матрицы чтобы не изменять оригинал
+        for (int j = 0; j < m; j++) { // Ищем столбцы с положительными элементами
+        // Проверяем, все ли элементы в столбце положительные
+        int otric = 0; // счетчик отрицательных элементов
+        for (int i = 0; i < n; i++) {
+            if (matrix[i][j] < 0) {
+                otric = 1; // нашли отрицательный эл-т
+                break;
+            }
+        }
+
+        if (otric == 0) {
+            if (firstCol == m) {
+                firstCol = j; // нашли первый такой столбец
+            }
+            lastCol = j; // обновляем последний найденный столбец
+        }
+    }
+    
+    // Меняем столбцы местами, если нашли разные столбцы
+    if (firstCol != m && lastCol != m && firstCol != lastCol) {
+        for (int i = 0; i < n; i++) {
+            // Меняем элементы местами
+            int temp = matrix[i][firstCol];
+            matrix[i][firstCol] = matrix[i][lastCol];
+            matrix[i][lastCol] = temp;
+        }
+        file << "Поменяли местами столбцы " << firstCol + 1 << " и " << lastCol + 1 << endl;
+    } else {
+        file << "Матрица без изменений" << endl;
+    }
+    
+    // Вывод результата
+    file << "Полученная матрица:" << endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            file << matrix[i][j] << " ";
+        }
+        file << endl;
+    }
+    file.close();
+    cout << "Результаты Matrix53 записаны в файл c.txt" << endl;
+    }
+    cout << endl;
+}
+
+//---------------------------------------------------------------------------------------(3)
