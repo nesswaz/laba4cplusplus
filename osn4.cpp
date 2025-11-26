@@ -21,7 +21,7 @@ int main() {
         cout << "5. Задание Matrix53" << endl;
         cout << "6. Задание DArray7" << endl;
         cout << "7. Задание DArray17" << endl;
-        cout << "777. Выход из программы" << endl;
+        cout << "999. Выход из программы" << endl;
         cin >> choice;
         switch (choice) {
             case 1: {
@@ -50,7 +50,15 @@ int main() {
                 matrix53file(matrix);
                 break;
             }
-            case 777: {
+            case 6: {
+                Darray7(matrix);
+                Darray7file(matrix);
+            }
+            case 7: {
+                Darray17(matrix);
+                Darray17file(matrix);
+            }
+            case 999: {
                 cout << "Выход из программы" << endl;
                 break;
             }
@@ -58,7 +66,22 @@ int main() {
                 cout << "Введены неверные данные" << endl;
                 break;
         }
-    } while (choice != 777);
+    } while (choice != 999);
     return 0;
 }
 //g++ osn4.cpp modul4.cpp -o program.exe
+/*
+matrix - это vector<vector<int>> (вектор векторов)
+resize(n) устанавливает, что во внешнем векторе будет n элементов
+Каждый элемент внешнего вектора - это отдельный вектор (строка матрицы)
+После этой операции у нас есть n пустых строк
+matrix[0] = []  (пустой вектор)
+matrix[1] = []  (пустой вектор)  
+matrix[2] = []  (пустой вектор)
+Проходим по каждой строке (от 0 до n-1)
+matrix[i].resize(m) устанавливает, что в каждой строке будет m элементов
+Все элементы инициализируются значением по умолчанию (для int - это 0)
+matrix[0] = [0, 0, 0, ..., 0]  (m нулей)
+matrix[1] = [0, 0, 0, ..., 0]  (m нулей)
+matrix[2] = [0, 0, 0, ..., 0]  (m нулей)
+*/

@@ -10,9 +10,15 @@ void fill_file(vector<vector<int>> &matrix, string filename); //заполнен
 void clearMatrix(vector<vector<int>> &matrix); //очищение матрицы 
 
 void matrix27(vector<vector<int>> &matrix);
-void matrix27file(vector<vector<int>> &matrix);
+void matrix27file(vector<vector<int>> &matrix); //1
 
-void matrix53(vector<vector<int>> &matrix);
+void matrix53(vector<vector<int>> &matrix); //2
 void matrix53file(vector<vector<int>> &matrix);
+
+void Darray7(vector<vector<int>> &matrix); //3
+void Darray7file(vector<vector<int>> &matrix);
+
+void Darray17(vector<vector<int>> &matrix); //4
+void Darray17file(vector<vector<int>> &matrix);
 
 #endif
