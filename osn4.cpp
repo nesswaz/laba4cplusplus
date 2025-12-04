@@ -1,6 +1,8 @@
+
 #define _HAS_STD_BYTE 0
 #define NOMINMAX
 #define WIN32_LEAN_AND_MEAN 
+#include "laura42.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -53,13 +55,16 @@ int main() {
             case 6: {
                 Darray7(matrix);
                 Darray7file(matrix);
+                break;
             }
             case 7: {
                 Darray17(matrix);
                 Darray17file(matrix);
+                break;
             }
             case 999: {
                 cout << "Выход из программы" << endl;
+                print();
                 break;
             }
             default:
@@ -69,7 +74,18 @@ int main() {
     } while (choice != 999);
     return 0;
 }
+
+
+
+
 //g++ osn4.cpp modul4.cpp -o program.exe
+
+
+
+
+
+
+
 /*
 matrix - это vector<vector<int>> (вектор векторов)
 resize(n) устанавливает, что во внешнем векторе будет n элементов
