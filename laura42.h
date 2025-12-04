@@ -9,4 +9,5 @@ void fillRandom(vector<vector<int>> &matrix); //заполнение рандо�
 void fill_file(vector<vector<int>> &matrix, string filename); //заполнение из файла
 void clearMatrix(vector<vector<int>> &matrix); //очищение матрицы 
 
+void matrixi(vector<vector<int>> &matrix, int n, int m);
 #endif

@@ -101,3 +101,15 @@ void clearMatrix(vector<vector<int>> &matrix) {
     matrix.clear();
     cout << "Матрица очищена" << endl;
 }
+
+void matrixi(vector<vector<int>> &matrix, int n, int m) {
+    std::cout << "\nИсходная матрица: \n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << "\n";
+    }
+    cout << "\n";
+
+}

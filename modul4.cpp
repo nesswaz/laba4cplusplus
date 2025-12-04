@@ -1,6 +1,7 @@
 #define _HAS_STD_BYTE 0
 #define NOMINMAX
 #include "laura4.h"
+#include "laura42.h"
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -74,11 +75,13 @@ void matrix27file(vector<vector<int>> &matrix) { //запись в консол�
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++(2)
 
 void matrix53(vector<vector<int>> &matrix) {
+
     // if (matrix.empty() || matrix[0].empty()) {
     // cout << "Матрица пуста" << endl;
     // }
     int n = matrix.size(); //строки
     int m = matrix[0].size(); //столбцы
+    matrixi(matrix, n, m);
     // Поиск столбцов с только положительными элементами
     int first = m;
     int last = m;   
@@ -110,6 +113,7 @@ void matrix53(vector<vector<int>> &matrix) {
     } else {
         cout << "Матрица без изменений" << endl;
     }
+    
     // Вывод результата
     cout << "Полученная матрица:" << endl;
     for (int i = 0; i < n; i++) {
